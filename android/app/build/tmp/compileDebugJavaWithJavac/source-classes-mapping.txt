@@ -1,0 +1,14 @@
+caprind_android/com/ReactNativeFlipper.java
+ caprind_android.com.ReactNativeFlipper
+ caprind_android.com.ReactNativeFlipper$1
+ caprind_android.com.ReactNativeFlipper$2
+ caprind_android.com.ReactNativeFlipper$2$1
+caprind_android/com/MainActivity.java
+ caprind_android.com.MainActivity
+caprind_android/com/MainApplication.java
+ caprind_android.com.MainApplication
+ caprind_android.com.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+caprind_android/com/BuildConfig.java
+ caprind_android.com.BuildConfig

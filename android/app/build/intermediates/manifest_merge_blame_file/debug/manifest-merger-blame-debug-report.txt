@@ -1,0 +1,178 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="caprind_android.com"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="30" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:4:3-75
+11-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:4:20-73
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:2:3-64
+12-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:2:20-62
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:3:3-77
+13-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:3:20-75
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:5:3-63
+14-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:5:20-61
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:6:3-78
+15-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:6:20-76
+16
+17    <queries>
+17-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:7:3-13:13
+18        <intent>
+18-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:8:5-12:14
+19            <action android:name="android.intent.action.VIEW" />
+19-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:9:7-58
+19-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:9:15-56
+20
+21            <category android:name="android.intent.category.BROWSABLE" />
+21-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:10:7-67
+21-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:10:17-65
+22
+23            <data android:scheme="https" />
+23-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:11:7-37
+23-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:11:13-35
+24        </intent>
+25        <!-- Query open documents -->
+26        <intent>
+26-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-21:18
+27            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+27-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:13-79
+27-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:21-76
+28        </intent>
+29    </queries>
+30
+31    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+31-->[com.facebook.flipper:flipper:0.54.0] C:\Users\FRANCISCO\.gradle\caches\transforms-3\62ece1a98ef095db320a1cbbfb42e6fd\transformed\jetified-flipper-0.54.0\AndroidManifest.xml:16:5-76
+31-->[com.facebook.flipper:flipper:0.54.0] C:\Users\FRANCISCO\.gradle\caches\transforms-3\62ece1a98ef095db320a1cbbfb42e6fd\transformed\jetified-flipper-0.54.0\AndroidManifest.xml:16:22-73
+32    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+33    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+33-->[com.android.installreferrer:installreferrer:1.0] C:\Users\FRANCISCO\.gradle\caches\transforms-3\4e71bdeea727c458aa8d4bf1a41de9b9\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+33-->[com.android.installreferrer:installreferrer:1.0] C:\Users\FRANCISCO\.gradle\caches\transforms-3\4e71bdeea727c458aa8d4bf1a41de9b9\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+34
+35    <application
+35-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:3-32:17
+36        android:name="caprind_android.com.MainApplication"
+36-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:16-47
+37        android:allowBackup="true"
+37-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:162-188
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.6.0] C:\Users\FRANCISCO\.gradle\caches\transforms-3\63630bff35c5941492530625c68eb7d4\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+39        android:debuggable="true"
+40        android:icon="@mipmap/ic_launcher"
+40-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:81-115
+41        android:label="@string/app_name"
+41-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:48-80
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:116-161
+43        android:theme="@style/AppTheme"
+43-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:189-220
+44        android:usesCleartextTraffic="true" >
+44-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:14:221-256
+45        <meta-data
+45-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:15:5-82
+46            android:name="expo.modules.updates.ENABLED"
+46-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:15:16-59
+47            android:value="true" />
+47-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:15:60-80
+48        <meta-data
+48-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:16:5-93
+49            android:name="expo.modules.updates.EXPO_SDK_VERSION"
+49-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:16:16-68
+50            android:value="44.0.0" />
+50-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:16:69-91
+51        <meta-data
+51-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:17:5-105
+52            android:name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH"
+52-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:17:16-80
+53            android:value="ALWAYS" />
+53-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:17:81-103
+54        <meta-data
+54-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:18:5-99
+55            android:name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS"
+55-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:18:16-79
+56            android:value="0" />
+56-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:18:80-97
+57
+58        <activity
+58-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:5-30:16
+59            android:name="caprind_android.com.MainActivity"
+59-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:15-43
+60            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+60-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:77-154
+61            android:label="@string/app_name"
+61-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:44-76
+62            android:launchMode="singleTask"
+62-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:155-186
+63            android:screenOrientation="portrait"
+63-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:276-312
+64            android:theme="@style/Theme.App.SplashScreen"
+64-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:230-275
+65            android:windowSoftInputMode="adjustResize" >
+65-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:19:187-229
+66            <intent-filter>
+66-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:20:7-23:23
+67                <action android:name="android.intent.action.MAIN" />
+67-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:21:9-60
+67-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:21:17-58
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:22:9-68
+69-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:22:19-66
+70            </intent-filter>
+71            <intent-filter>
+71-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:24:7-29:23
+72                <action android:name="android.intent.action.VIEW" />
+72-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:9:7-58
+72-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:9:15-56
+73
+74                <category android:name="android.intent.category.DEFAULT" />
+74-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:26:9-67
+74-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:26:19-65
+75                <category android:name="android.intent.category.BROWSABLE" />
+75-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:10:7-67
+75-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:10:17-65
+76
+77                <data android:scheme="caprind_android.com" />
+77-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:11:7-37
+77-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:11:13-35
+78            </intent-filter>
+79        </activity>
+80        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+80-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:31:5-81
+80-->D:\React-Native\Expo\AppCaprind\android\app\src\main\AndroidManifest.xml:31:15-79
+81
+82        <provider
+82-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-34:20
+83            android:name="expo.modules.filesystem.FileSystemFileProvider"
+83-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-74
+84            android:authorities="caprind_android.com.FileSystemFileProvider"
+84-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:13-74
+85            android:exported="false"
+85-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-37
+86            android:grantUriPermissions="true" >
+86-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:13-47
+87            <meta-data
+87-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:13-33:70
+88                android:name="android.support.FILE_PROVIDER_PATHS"
+88-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:17-67
+89                android:resource="@xml/file_system_provider_paths" />
+89-->[:expo-file-system] D:\React-Native\Expo\AppCaprind\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:17-67
+90        </provider>
+91
+92        <meta-data
+92-->[:expo-modules-core] D:\React-Native\Expo\AppCaprind\node_modules\expo-modules-core\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-14:89
+93            android:name="org.unimodules.core.AppLoader#react-native-headless"
+93-->[:expo-modules-core] D:\React-Native\Expo\AppCaprind\node_modules\expo-modules-core\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-79
+94            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
+94-->[:expo-modules-core] D:\React-Native\Expo\AppCaprind\node_modules\expo-modules-core\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-86
+95    </application>
+96
+97</manifest>
