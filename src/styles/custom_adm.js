@@ -98,7 +98,7 @@ export const Label1 = styled.Text`
 `;
 
 export const InputText = styled.TextInput`
-    text-align:left;
+    text-align:Left;
     background-color: #fff;
     width: 100%;
     margin-bottom: 10px;
