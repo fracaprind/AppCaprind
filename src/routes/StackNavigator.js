@@ -160,19 +160,7 @@ const ListProductStack = () => {
                 name="ListProducts"
                 component={FlatListProducts}
                 options={{
-                    headerTitle: "Produtos",
-                    headerRight: () => (
-                        <TitleIcon
-                            onPress={() => {
-                                navigation.navigate('AddProduct')
-                            }}>
-                            <MaterialCommunityIcons
-                                name="plus-circle-outline"
-                                size={25}
-                                color="#fff"
-                            />
-                        </TitleIcon>
-                    )
+                    headerTitle: "Produtos"
                 }}
             />
 

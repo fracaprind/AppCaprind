@@ -59,19 +59,6 @@ export default function ViewProduct({ route }) {
             <TitleViewContent>Estoque</TitleViewContent>
             <ViewContent>{product.Estoque}</ViewContent>
 
-
-            <BtnActionEdit>
-                <TxtBtnAction>
-                    Gravar produto
-                </TxtBtnAction>
-            </BtnActionEdit>
-
-            <BtnActionDelete>
-                <TxtBtnAction>
-                    Excluir produto
-                </TxtBtnAction>
-            </BtnActionDelete>
-
         </Container>
     )
 }

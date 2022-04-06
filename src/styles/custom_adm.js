@@ -126,6 +126,15 @@ export const ButtonFind = styled.TouchableOpacity`
     border-radius: 10px;
 `;
 
+export const ButtonOrder = styled.TouchableOpacity`
+    background-color: #19428f;
+    width: 10%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+`;
+
 export const InputText = styled.TextInput`
     text-align:left;
     background-color: #fff;
@@ -349,8 +358,7 @@ export const TitleIcon = styled.TouchableOpacity`
     margin: 5px;
     height: 25px;
     padding: 0px;
-    border: 1px solid;
-    border-color: #fff;
+
     width:35px;
     border-radius: 3px;
     align-items: center;

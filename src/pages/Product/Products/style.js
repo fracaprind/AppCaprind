@@ -15,7 +15,15 @@ const styles = StyleSheet.create({
         fontSize:12,
         color:'#19428f'
     },
+    descricao:{
+        fontSize:12,
+        color:'#000000'
+    },
 
+    label:{
+        fontSize:9,
+        color:'#808080'
+    },
     cliente:{
         fontSize:10,
         color:'#4F4F4F'
