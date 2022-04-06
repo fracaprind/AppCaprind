@@ -11,7 +11,7 @@ import { SafeAreaView, View, FlatList, Alert} from 'react-native'
 import Products from './../ViewOrder/Products';
 
 
-import { TxtListTitle, TitleViewContent, ViewContent,ViewInputContent, BtnActionEdit, BtnActionDelete, TxtBtnAction } from '../../../styles/custom_adm';
+import { ContainerEdit, Label, TxtListTitle, TitleViewContent, ViewContent,ViewInputContent, BtnActionEdit, BtnActionDelete, TxtBtnAction } from '../../../styles/custom_adm';
 import styles from '../ViewOrder/style';
 
 import api from '../../../config/api';
@@ -82,25 +82,30 @@ export default function ViewOrder({ route }) {
                keyExtractor={item =>String(item.ID_Lista)}
                ListHeaderComponent={() => (
                 <View >
-                    <TitleViewContent >N° pedido</TitleViewContent>
+                    <Label >N° pedido</Label>
                     <ViewContent >{order.ID_Pedido}</ViewContent>
 
-                    <TitleViewContent >Status do pedido</TitleViewContent>
+                    <Label >Status do pedido</Label>
                     <ViewInputContent >{order.Status}</ViewInputContent>
 
-                    <TitleViewContent>Data emissão</TitleViewContent>
+                    <Label>Data emissão</Label>
                     <ViewContent>{dataemissao}</ViewContent>
 
-                    <TitleViewContent>Cliente</TitleViewContent>
-                    <ViewInputContent>{order.cliente}</ViewInputContent>
+                    <Label>Cliente</Label>
+                    <ViewContent>{order.cliente}</ViewContent>
 
-                    <TitleViewContent>CNPJ</TitleViewContent>
-                    <ViewInputContent>{order.CNPJ}</ViewInputContent>
+                    <Label>CNPJ</Label>
+                    <ViewContent>{order.CNPJ}</ViewContent>
 
-                    <TitleViewContent>Observações</TitleViewContent>
-                    <ViewInputContent>{order.Observações}</ViewInputContent>
+                    <Label style={{color: '#800000'}}>Observações</Label>
+                    <ViewContent         
+                    multiline
+                    numberOfLines={4}
+                    >
+                    {order.Observações}
+                    </ViewContent>
 
-                    <TitleViewContent>Vendedor responsável</TitleViewContent>
+                    <Label>Vendedor responsável</Label>
                     <ViewContent>{order.Vendedor}</ViewContent>
 
 

@@ -3,6 +3,10 @@ import { useFocusEffect } from '@react-navigation/native';
 import { SafeAreaView, View, FlatList, Alert} from 'react-native';
 import Products from '../Products';
 
+import {InputUF, BtnEditForm,TxtEditForm, Label, TxtForm, ButtonFind, ContainerFind, TextFind, LoadingArea } from '../../../styles/custom_adm';
+
+import { MaskedTextInput } from "react-native-mask-text";
+
 import styles from './style';
 import api from '../../../config/api';
 import {UserContext} from '../../../contexts/user';
@@ -43,7 +47,13 @@ const {cnpj, vendedor} = useContext(UserContext);
     return (
         <SafeAreaView style={styles.container}>
         <View >
-
+            <ContainerFind>           
+                <TextFind
+                   placeholder="Digite o texto para pesquisa"
+                >
+                </TextFind>
+                <ButtonFind><TxtForm>...</TxtForm></ButtonFind>
+            </ContainerFind> 
            <FlatList 
            data={filteredProducts}
            keyExtractor={item =>String(item.ID_Produto)}

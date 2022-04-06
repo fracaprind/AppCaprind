@@ -88,7 +88,7 @@ const ListClientStack = () => {
                 name="ListClients"
                 component={FlatListClients}
                 options={{
-                    headerTitle: "Lista de clientes",
+                    headerTitle: "Clientes",
                     headerRight: () => (
                         <>
 
@@ -160,7 +160,7 @@ const ListProductStack = () => {
                 name="ListProducts"
                 component={FlatListProducts}
                 options={{
-                    headerTitle: "Lista de produtos",
+                    headerTitle: "Produtos",
                     headerRight: () => (
                         <TitleIcon
                             onPress={() => {

@@ -44,6 +44,8 @@ export const ContainerLogin = styled.SafeAreaView`
     padding:20px;
 `;
 
+
+
 export const ContainerTipo = styled.SafeAreaView`
     flex: 1;
     align-items: center;
@@ -95,10 +97,37 @@ export const Label1 = styled.Text`
     color: #fff;
     margin-right: 0px;
     text-align:right;
+    color: #000;
+`;
+
+export const ContainerFind = styled.SafeAreaView`
+    flex-Direction: row;
+    margin: 10px;
+`;
+
+export const TextFind = styled.TextInput`
+    text-align:left;
+    background-color: #fff;
+    width: 90%;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 5px;
+    border-color: #19428f;
+    border-width: 1px;
+    margin-right:2px;
+`;
+
+export const ButtonFind = styled.TouchableOpacity`
+    background-color: #19428f;
+    width: 10%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 `;
 
 export const InputText = styled.TextInput`
-    text-align:Left;
+    text-align:left;
     background-color: #fff;
     width: 100%;
     margin-bottom: 10px;
@@ -269,9 +298,10 @@ export const ViewInputContent = styled.TextInput`
 `;
 
 export const ViewContent = styled.TextInput`
+    text-align: left;
     padding-bottom: 5px;
     color: #111;
-    font-size: 12px;
+    font-size: 10px;
     border-bottom-color: #c0c0c0;
     border-bottom-width: 1px;
 `;
