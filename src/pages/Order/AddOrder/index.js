@@ -89,6 +89,24 @@ useFocusEffect(
 );
 
 
+const validade = () => {
+
+    if (!Cliente) {
+        Alert.alert("", "Erro: Necessário preencher o campo nome!");
+        return false;
+    }
+
+
+    if (!CNPJ) {
+        Alert.alert("", "Erro: Necessário preencher o campo CNPJ!");
+        return false;
+    }
+       
+
+    return true;
+}
+
+
     const addOrder = async () => {
         await api.post('/order', { cliente })
             .then((response) => {
