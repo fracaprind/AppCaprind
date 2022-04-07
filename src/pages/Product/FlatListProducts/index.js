@@ -1,4 +1,4 @@
-import React, { useState,useEffect, useCallback, useContext } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import { useFocusEffect } from '@react-navigation/native';
 import { SafeAreaView, View, FlatList, Alert} from 'react-native';
 import Products from '../Products';
@@ -70,13 +70,9 @@ useEffect(() =>{
     );
 
     const handleOrderClick = () => {
-        console.log('aqui')
         let newList = [...filteredProducts];
-    
-        newList.sort((a, b) => (a.Descricao > b.Descricao)?1:(b.Descricao > a.Descricao)?-1:0);
-    
+        newList.sort((a, b) => (a.Descricao > b.Descricao)?1:(b.Descricao > a.Descricao)?-1:0);  
         setList(newList);
-    
     };
 
 

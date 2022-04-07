@@ -1,17 +1,13 @@
 import React, { useState, useContext,useCallback } from "react";
-import { Text, Switch, View, Alert, ScrollView, ActivityIndicator } from "react-native";
+import { Alert, ScrollView, ActivityIndicator } from "react-native";
 
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 
-import { Label,ContainerRow, TxtForm, ButtonMask,ContainerTipo, ContainerEdit, InputText, InputForm, BtnEditForm, TxtEditForm, LoadingArea } from '../../../styles/custom_adm';
-
-import { MaskedTextInput } from "react-native-mask-text";
+import { Label, ContainerEdit, InputText, BtnEditForm, TxtEditForm, LoadingArea } from '../../../styles/custom_adm';
 
 import {UserContext} from '../../../contexts/user';
 
-import { validate, format, generate } from 'cnpj';
-
-import styles from '../style';
+import {  format } from 'cnpj';
 
 import api from '../../../config/api';
 

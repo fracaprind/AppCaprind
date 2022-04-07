@@ -80,7 +80,7 @@ export const ContainerRow = styled.SafeAreaView`
 export const ContainerEdit = styled.SafeAreaView`
     flex: 1;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #DCDCDC;
     padding:20px;
 `;
@@ -97,7 +97,6 @@ export const Label1 = styled.Text`
     color: #fff;
     margin-right: 0px;
     text-align:right;
-    color: #000;
 `;
 
 export const ContainerFind = styled.SafeAreaView`
@@ -307,12 +306,16 @@ export const ViewInputContent = styled.TextInput`
 `;
 
 export const ViewContent = styled.TextInput`
+    width:100%;
+    border-radius:5px;
     text-align: left;
-    padding-bottom: 5px;
+    background-color: #fff;
+    padding: 10px;
     color: #111;
     font-size: 10px;
     border-bottom-color: #c0c0c0;
     border-bottom-width: 1px;
+    height:150px;
 `;
 
 export const BtnActionEdit = styled.TouchableOpacity`
@@ -358,7 +361,7 @@ export const TitleIcon = styled.TouchableOpacity`
     margin: 5px;
     height: 25px;
     padding: 0px;
-
+    color:#fff;
     width:35px;
     border-radius: 3px;
     align-items: center;

@@ -14,7 +14,8 @@ import FlatListClients from '../pages/Client/FlatListClients';
 import ViewClient from '../pages/Client/ViewClient';
 import AddClient from '../pages/Client/AddClient';
 import AddPerson from '../pages/Client/AddPerson';
-import Menu from '../pages/Client/Menu';
+
+import FlatListFindClient from '../pages/Order/AddOrder/FlatListFindClient'
 
 import FlatListProducts from '../pages/Product/FlatListProducts';
 import ViewProduct from '../pages/Product/ViewProduct';
@@ -44,7 +45,7 @@ const ListOrderStack = () => {
                     headerRight: () => (
                         <TitleIcon
                             onPress={() => {
-                                navigation.navigate('AddOrder')
+                                navigation.navigate('AddOrderFindClient')
                             }}>
                             <MaterialCommunityIcons
                                 name="plus-circle-outline"
@@ -64,6 +65,13 @@ const ListOrderStack = () => {
                 }}
             />
 
+            <Stack.Screen
+                name="AddOrderFindClient"
+                component={FlatListFindClient}
+                options={{
+                    headerTitle: "Cadastrar Pedido | Localizar cliente"
+                }}
+            />
             <Stack.Screen
                 name="AddOrder"
                 component={AddOrder}

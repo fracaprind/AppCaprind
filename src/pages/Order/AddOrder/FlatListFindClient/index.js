@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
 import { useFocusEffect } from '@react-navigation/native';
 import {SafeAreaView, View, FlatList} from 'react-native'
-import Clients from '../Clients';
+import Clients from '../FindClients';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { MaterialCommunityIcons} from '@expo/vector-icons';
 
-import { ButtonOrder, ContainerFind, TextFind, LoadingArea } from '../../../styles/custom_adm';
+import { ButtonOrder, ContainerFind, TextFind, LoadingArea } from '../../../../styles/custom_adm';
 
 import styles from './style';
-import api from '../../../config/api';
-import {UserContext} from '../../../contexts/user';
+import api from '../../../../config/api';
+import {UserContext} from '../../../../contexts/user';
 
-export default function FlatListClients() {
+export default function FlatListFindClient() {
 
 //================================================
 //Buscar CNPJ da empresa e nome do usuario
