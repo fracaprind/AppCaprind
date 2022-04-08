@@ -3,7 +3,7 @@ import { Alert } from "react-native";
 
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
-import { Container, TitleViewContent, ViewContent, BtnActionEdit, BtnActionDelete, TxtBtnAction } from '../../../styles/custom_adm';
+import { InputText, ContainerEdit,Label, TitleViewContent, ViewContent, BtnActionEdit, BtnActionDelete, TxtBtnAction } from '../../../styles/custom_adm';
 
 import api from '../../../config/api';
 
@@ -42,23 +42,23 @@ export default function ViewProduct({ route }) {
 
 
     return (
-        <Container>
+        <ContainerEdit>
 
-            <TitleViewContent>ID Produto</TitleViewContent>
-            <ViewContent>{product.ID_Produto}</ViewContent>
+            <Label>ID Produto</Label>
+            <InputText>{product.ID_Produto}</InputText>
 
-            <TitleViewContent>Codigo</TitleViewContent>
-            <ViewContent>{product.Codigo}</ViewContent>
+            <Label>Codigo</Label>
+            <InputText>{product.Codigo}</InputText>
 
-            <TitleViewContent>Unidade</TitleViewContent>
-            <ViewContent>{product.Unidade}</ViewContent>
+            <Label>Unidade</Label>
+            <InputText>{product.Unidade}</InputText>
 
-            <TitleViewContent>Descricao</TitleViewContent>
-            <ViewContent>{product.Descricao}</ViewContent>
+            <Label>Descricao</Label>
+            <InputText>{product.Descricao}</InputText>
 
-            <TitleViewContent>Estoque</TitleViewContent>
-            <ViewContent>{product.Estoque}</ViewContent>
+            <Label>Estoque</Label>
+            <InputText>{product.Estoque}</InputText>
 
-        </Container>
+        </ContainerEdit>
     )
 }

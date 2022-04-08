@@ -23,7 +23,7 @@ const [filteredOrders, setFilteredOrders] = useState([]);
 
 const [searchText, setSearcText] = useState('');
 
-const [list, setList] = useState(filteredOrders)
+const [list, setList] = useState('')
 
 useEffect(() =>{
     if(searchText===''){
@@ -41,7 +41,9 @@ useEffect(() =>{
 
 
     const getOrders = async () => {
-        await api.get('/orders/1',{
+        console.log('Vendedor: ' + vendedor)
+
+        await api.get('/orders/all/1',{
             params: {
               cnpj:cnpj,
               vendedor:vendedor 
@@ -50,6 +52,8 @@ useEffect(() =>{
 
             .then((response) => {
             setFilteredOrders(response.data.orders);
+            setList(response.data.orders);
+
             }).catch((err) => {
                 if (err.response) {
                     Alert.alert("", err.response.data.mensagem);
@@ -62,8 +66,7 @@ useEffect(() =>{
     useFocusEffect(
         useCallback(() => {
             getOrders();
-        }, [])
-        
+        }, [])      
     );
 
     const handleOrderClick = () => {

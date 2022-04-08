@@ -23,7 +23,7 @@ const [loading, setLoading] = useState(false);
 
 const [searchText, setSearcText] = useState('');
 
-const [list, setList] = useState(filteredProducts)    
+const [list, setList] = useState('')    
 
 const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -53,6 +53,7 @@ useEffect(() =>{
           })
             .then((response) => {
             setFilteredProducts(response.data.products);
+            setList(response.data.products);
             setLoading(false);
             }).catch((err) => {
                 if (err.response) {

@@ -12,7 +12,7 @@ import {UserContext} from '../../../contexts/user';
 import { format } from 'cnpj';
 
 import api from '../../../config/api';
-
+import uuid from 'uuid-random';
 
 export default function AddOrder({ route }) {
 
@@ -28,48 +28,38 @@ const {cnpj, vendedor} = useContext(UserContext);
 const [CNPJ_Empresa, setCNPJ_Empresa] = useState(cnpj);
 const [Vendedor, setVendedor] = useState(vendedor);
 //=================================================
-
+const [Data, setData] = useState(Date)
+const [Status, setStatus] = useState('Aberto')
+const [CondPagto, SetcondPagto] = useState('')
 const [CNPJ, setCnpj] = useState('');
+const [CNPJFormated, setCnpjFormated] = useState('');
 const [CPF, setCpf] = useState('');
 const [ID_Cliente, setID_Cliente] = useState('');
 const [Cliente, setCliente] = useState('');
-const [NomeFantasia, setNomeFantasia] = useState('');
-const [Contato1, setNomeContato] = useState('');           
-const [CEP, setCep] = useState('');
-const [UF, setUF] = useState(''); 
-const [Cidade, setCidade] = useState('');
-const [Bairro, setBairro] = useState('');
-const [Endereco, setEndereco] = useState('');
-const [Numero, setNumero] = useState('');
-const [Telefone, setTelefone] = useState('');
-const [Email, setEmail] = useState('');
-
-
+const [Nome_Fantasia, setNomeFantasia] = useState('');
+const [Contato, setNomeContato] = useState('');           
+const [Observações, setObservacoes] = useState('');
+const [ID_Pedido, setID_Pedido] = useState('');
+const [UUid, SetUUid] = useState (uuid());
 const getClient = async () => {
 
+//console.log(UUid);
 
     const { clientId } = route.params;
 
     await api.get('/clients/ID/' + clientId)
     .then((response) => {
-        console.log(response.data.client);
+       // console.log(response.data.client);
         const formatted = format(response.data.client.CNPJ)
-        setCnpj(formatted)            
+        setCnpjFormated(formatted)
+        setCnpj(response.data.client.CNPJ)           
 
         setID_Cliente(response.data.client.ID_Cliente)
         setClient(response.data.client);
         setLoading(false);
         setCliente(response.data.client.Cliente);
-        setCep(response.data.client.CEP)
-        setBairro(response.data.client.Bairro)
-        setEndereco(response.data.client.Endereco)
-        setNumero(response.data.client.Numero)
-        setUF(response.data.client.UF)
-        setCidade(response.data.client.Cidade) 
-        setEmail(response.data.client.Email)                      
-        setTelefone(response.data.client.Telefone)
         setNomeContato(response.data.client.Contato1)
-
+        setNomeFantasia(response.data.client.NomeFantasia)
 
     }).catch((err) => {
         if(err.response){
@@ -96,43 +86,74 @@ const validade = () => {
         return false;
     }
 
-
-    if (!CNPJ) {
-        Alert.alert("", "Erro: Necessário preencher o campo CNPJ!");
-        return false;
-    }
-       
-
     return true;
 }
-
+//========================================================================
+// Adicona o pedido de vendas
+//========================================================================
 
     const addOrder = async () => {
-        await api.post('/order', { cliente })
-            .then((response) => {
+
+        await api.post('/order/add', {Data, CNPJ_Empresa ,CNPJ ,ID_Cliente ,Cliente ,Nome_Fantasia ,Vendedor ,Status ,Contato , CondPagto, Observações,UUid })    
+
+        .then((response) => {
                 Alert.alert("", response.data.mensagem);
-                navigation.navigate('ListOrders');
-            }).catch((err) => {
+            //    navigation.navigate('ListOrders');
+                  
+            }
+        ).catch((err) => {
                 if (err.response) {
                     Alert.alert("", err.response.data.mensagem.toString());
                 } else {
-                    Alert.alert("", "Erro: Usuário não cadastrado com sucesso, tente mais tarde!");
+                    Alert.alert("", "Erro: Pedido de venda não cadastrado, tente mais tarde1!");
+                }
+        });
+        getOrder(UUid);  
+    }
+    //==========================================================================
+    // Busca o pedido de venda cadastrado
+    //==========================================================================
+    const getOrder = async () => {
+
+        await api.get('/orders/UUid',{
+        params: {
+            UUid:UUid,
+          }
+         }) 
+        
+        .then((response) => {
+            setID_Pedido(response.data.ID_Pedido.toString());
+            console.log(ID_Pedido);
+            //    navigation.navigate('ListOrders');     
+            
+            }
+            ).catch((err) => {
+                if (err.response) {
+                    Alert.alert("", err.response.data.mensagem.toString());
+                } else {
+                    Alert.alert("", "Erro: Pedido de venda não localizado, tente mais tarde1!");
                 }
             });
     }
+    
 
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
             <ContainerEdit>
-            <Label>Documento</Label>
+            <Label>*N° Pedido</Label>
+                <InputText
+                    value={ID_Pedido}
+                    onChangeText={text => setID_Pedido(text)}
+                />                            
+            <Label>*Documento</Label>
                 <InputText
                     placeholder="Cnpj"
-                    value={CNPJ}
+                    value={CNPJFormated}
                     autoCapitalize="characters"                    
                     editable={!loading}
-                    onChangeText={text => setCnpj(text)}
+                    onChangeText={text => setCnpjFormated(text)}
                 />
-            <Label>Nome razão social</Label>
+            <Label>*Nome razão social</Label>
                 <InputText
                     placeholder="Nome razão social"
                     value={Cliente}
@@ -143,26 +164,35 @@ const validade = () => {
             <Label>Nome Fantasia</Label>
                 <InputText
                     placeholder="Nome fantasia"
-                    value={NomeFantasia}
+                    value={Nome_Fantasia}
                     autoCapitalize="characters"                    
                     editable={!loading}
                     onChangeText={text => setNomeFantasia(text)}
                 />
 
-            <Label>Contato do cliente</Label>
+            <Label>*Contato do cliente</Label>
                 <InputText
                     placeholder="Nome Contato"
-                    value={Contato1}
+                    value={Contato}
                     autoCapitalize="characters"                    
                     editable={!loading}
                     onChangeText={text => setNomeContato(text)}
                 />
-
+            <Label>*Condições de pagamento</Label>                
+                <InputText
+                    placeholder="digite as condições de pagamento"
+                    value={CondPagto}
+                    autoCapitalize="characters"                    
+                    editable={!loading}
+                    onChangeText={text => SetcondPagto(text)}
+                />
                     <Label style={{color: '#800000'}}>Observações</Label>
-                    <ViewContent        
+                    <ViewContent
+                    placeholder="Digite as observações"      
                     multiline={true}
                     numberOfLines={4}
                     textAlignVertical = 'top'
+                    onChangeText={text => setObservacoes(text)}                    
                     >
                     </ViewContent>                               
 

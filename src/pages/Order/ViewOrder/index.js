@@ -6,12 +6,12 @@ import { validate, format, generate } from 'cnpj';
 
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
-import { SafeAreaView, View, FlatList, Alert} from 'react-native'
+import { SafeAreaView, FlatList, Alert} from 'react-native'
 
 import Products from './../ViewOrder/Products';
 
 
-import { ContainerEdit, Label, TxtListTitle, TitleViewContent, ViewContent,ViewInputContent, BtnActionEdit, BtnActionDelete, TxtBtnAction } from '../../../styles/custom_adm';
+import { InputText, ContainerEdit, Label, TxtListTitle, BtnActionEdit, BtnActionDelete, TxtBtnAction } from '../../../styles/custom_adm';
 import styles from '../ViewOrder/style';
 
 import api from '../../../config/api';
@@ -35,10 +35,10 @@ export default function ViewOrder({ route }) {
         }).catch((err) => { 
             if(err.response){
                 Alert.alert("", err.response.data.mensagem);
-                navigation.navigate('ListOrders');
+              //  navigation.navigate('ListOrders');
             }else{
                 Alert.alert("", "Erro: Tente mais tarde!");
-                navigation.navigate('ListOrders');
+              //  navigation.navigate('ListOrders');
             }
         });
     //================================================================
@@ -76,37 +76,51 @@ export default function ViewOrder({ route }) {
 
     return (
 
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
             <FlatList 
                data={filteredProducts}
                keyExtractor={item =>String(item.ID_Lista)}
                ListHeaderComponent={() => (
-                <View >
+                <ContainerEdit >
                     <Label >N° pedido</Label>
-                    <ViewContent >{order.ID_Pedido}</ViewContent>
+
+                    <InputText>{order.ID_Pedido}</InputText>
 
                     <Label >Status do pedido</Label>
-                    <ViewInputContent >{order.Status}</ViewInputContent>
+                    <InputText >{order.Status}</InputText>
 
                     <Label>Data emissão</Label>
-                    <ViewContent>{dataemissao}</ViewContent>
+                    <InputText>{dataemissao}</InputText>
 
                     <Label>Cliente</Label>
-                    <ViewContent>{order.cliente}</ViewContent>
+                    <InputText
+                    multiline={true}
+                    numberOfLines={2}
+                    textAlignVertical = 'top'                    
+                    >{order.Cliente}</InputText>
 
                     <Label>CNPJ</Label>
-                    <ViewContent>{order.CNPJ}</ViewContent>
+                    <InputText>{order.CNPJ}</InputText>
 
-                    <Label style={{color: '#800000'}}>Observações</Label>
-                    <ViewContent         
-                    multiline
-                    numberOfLines={4}
-                    >
-                    {order.Observações}
-                    </ViewContent>
+                    <Label>Contato do cliente</Label>
+                    <InputText>{order.Contato}</InputText>
 
                     <Label>Vendedor responsável</Label>
-                    <ViewContent>{order.Vendedor}</ViewContent>
+                    <InputText>{order.Vendedor}</InputText>
+
+                    <Label>Condições de pagamento</Label>
+                    <InputText>{order.CondPagto}</InputText>   
+
+                    <Label style={{color: '#800000'}}>Observações</Label>
+                    <InputText         
+                    multiline={true}
+                    numberOfLines={4}
+                    textAlignVertical = 'top'
+                    >
+                    {order.Observações}
+                    </InputText>
+
+
 
 
                     <BtnActionEdit>
@@ -124,7 +138,7 @@ export default function ViewOrder({ route }) {
                     <TxtListTitle>
                             Listagem de produtos
                     </TxtListTitle>
-                </View>
+                </ContainerEdit>
               )}
                renderItem={({item})=><Products data={item} />}
                />
